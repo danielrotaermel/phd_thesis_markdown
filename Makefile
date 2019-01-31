@@ -6,6 +6,7 @@ INPUTDIR=$(BASEDIR)/source
 OUTPUTDIR=$(BASEDIR)/output
 TEMPLATEDIR=$(INPUTDIR)/templates
 STYLEDIR=$(BASEDIR)/style
+LANGUAGE=english
 
 BIBFILE=$(INPUTDIR)/references.bib
 
@@ -32,6 +33,7 @@ pdf:
 	--bibliography="$(BIBFILE)" 2>pandoc.log \
 	--csl="$(STYLEDIR)/ref_format.csl" \
 	--highlight-style pygments \
+	-V lang="$(LANGUAGE)" \
 	-V fontsize=12pt \
 	-V papersize=a4paper \
 	-V documentclass=report \
