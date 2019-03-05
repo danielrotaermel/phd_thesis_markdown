@@ -6,13 +6,14 @@ $else$
 $endif$
 
 % Overwrite \begin{figure}[htbp] with \begin{figure}[H]
+% https://tex.stackexchange.com/a/238556
 \usepackage{float}
 \let\origfigure=\figure
 \let\endorigfigure=\endfigure
 \renewenvironment{figure}[1][]{%
-\origfigure[b]
+  \origfigure[H]
 }{%
-\endorigfigure
+  \endorigfigure
 }
 
 % fix for pandoc 1.14
